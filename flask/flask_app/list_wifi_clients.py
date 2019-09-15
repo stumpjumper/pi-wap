@@ -188,7 +188,7 @@ if (__name__ == '__main__'):
 
   myListWiFiClients = ListWiFiClients(clo.verbose)
 
-  print ("Connected conDevices:")
+  print ("Connected Devices:")
   myListWiFiClients.printConDevicesTable()
 
   print ()
