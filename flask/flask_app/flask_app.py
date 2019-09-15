@@ -27,9 +27,9 @@ def hello_world():
 def dhpc_status():
 
   uptime = getUptime()
-  uptime = uptime.replace(" up",", Up")
+  uptime = "Time: " + uptime
+  uptime = uptime.replace(" up",", Up time:")
   uptime = uptime.replace("load average","Load average")
-  uptime = "Time " + uptime
 
   myListWiFiClients = ListWiFiClients()
 
