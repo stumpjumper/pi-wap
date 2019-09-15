@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/home/pi/flask/flask_app
+ExecStart=/usr/local/bin/uwsgi --ini /home/pi/flask/flask_server/uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
