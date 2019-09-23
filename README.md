@@ -33,9 +33,9 @@ Instead of using the app name `flasktest` am using `flask_app`.
 
 Thus the file `flasktest_proxy` becomes `flask_app_proxy`
 
-And instead of using the symbolic link
-`/etc/nginx/sites-available/flasktest_proxy -> /etc/nginx/sites-enabled`
-am using 
+And instead of using the symbolic link  
+`/etc/nginx/sites-available/flasktest_proxy -> /etc/nginx/sites-enabled`  
+am using  
 `/etc/nginx/sites-enabled/flask_app_proxy -> /home/pi/flask/flask_server/flask_app_proxy`
 
 ## Flask app setup
