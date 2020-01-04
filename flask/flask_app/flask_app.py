@@ -12,6 +12,16 @@ def getUptime():
   uptimeString = bytes.decode(uptimeRun.stdout)
   return uptimeString
 
+def getIwconfig():
+  iwconfigRun = subprocess.run(['iwconfig'],check=True,stdout=subprocess.PIPE)
+  iwconfigString = bytes.decode(iwconfigRun.stdout)
+  return iwconfigString
+
+def getIfconfig():
+  ifconfigRun = subprocess.run(['ifconfig'],check=True,stdout=subprocess.PIPE)
+  ifconfigString = bytes.decode(ifconfigRun.stdout)
+  return ifconfigString
+
 def getPrettyUptime():
   uptime = getUptime()
   uptime = uptime.split("up")
@@ -54,6 +64,8 @@ def dhpc_status():
   dateTime = getDateTime()
   fahrenheit = True
   temp     = getCPUTemp(fahrenheit=fahrenheit)
+  iwconfig = getIwconfig()
+  ifconfig = getIfconfig()
 
   tempType = "C"
   maxTemp  = "82°C"
@@ -75,16 +87,24 @@ def dhpc_status():
 <p>%s</p>
 <p>%s</p>
 <p>CPU Temp: %.1f°%s (< %s is good)</p>
-Connected Devices
+<h3>Connected Devices</h3>
 <pre>
 %s
 </pre>
-<br>DHCP Leases
+<h3>DHCP Leases</h3>
+<pre>
+%s
+</pre>
+<h3>Wireless Status of Wireless Network Interface(s)</h3>
+<pre>
+%s
+</pre>
+<h3>General Status of All Network Interfaces(s)</h3>
 <pre>
 %s
 </pre>
   """ % (dateTime, uptime, temp, tempType, maxTemp, conDevicesString,
-         dhcpLeasesString)
+         dhcpLeasesString,iwconfig,ifconfig)
 
   return msg
 
