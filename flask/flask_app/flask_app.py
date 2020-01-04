@@ -95,11 +95,11 @@ def dhpc_status():
 <pre>
 %s
 </pre>
-<h3>Wireless Status of Wireless Network Interface(s)</h3>
+<h3>Wireless Status of Wireless Network Interfaces</h3>
 <pre>
 %s
 </pre>
-<h3>General Status of All Network Interfaces(s)</h3>
+<h3>General Status of All Network Interfaces</h3>
 <pre>
 %s
 </pre>
