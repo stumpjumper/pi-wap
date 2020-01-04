@@ -38,5 +38,9 @@ And instead of using the symbolic link
 am using  
 `/etc/nginx/sites-enabled/flask_app_proxy -> /home/pi/flask/flask_server/flask_app_proxy`
 
+#### NOTES
+1) `/etc/nginx/sites-enabled/flask_app_proxy` is not directly linked to `pi-wap/flask/flask_server/flask_app_proxy` because of permissions issues.  Instead, needed files are copied to `/home/pi/flask` using the command `sudo /home/pi/flask/get_changed_files`, which copies as root via a rsync command the needed files from this repository. The command is archived as the repository file `flask/get_changed_files.see_README`
+2) Even with the tricks played above for the Flask Sever, the Flask app is still `/home/pi/projects/pi-wap/flask/flask_app/flask_app.py` as set in `pi-wap/flask/flask_server/uwsgi.ini` **so the path in `uwsgi.ini` will have to be changed if the repository location is changed on the Raspberry Pi**.  This is bad because things need to be changed in two places.  It is good because changes to flask_app.py take place right away, instead of having to always execute `get_chagned_files`.
+
 ## Flask app setup
 
