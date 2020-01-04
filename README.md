@@ -1,7 +1,9 @@
 # pi-wap
 Configure a Raspberry Pi to be a wireless access point and a very simple Flask-based web page to show status.
 
-## Wireless Access Point Software and Congig
+A general overview on how to use and configure the access point can be found in my Google Drive in the README file on my Google Drive in the folder `GDrive Manuals/Computers/Raspberry Pi/Wireless Access Point and Flask-Based Status Page`
+
+## Wireless Access Point Software and Config
 Software and configuration to create the WAP came from the article Setting up a *Raspberry Pi as a Wireless Access Point* found here on the [RaspberryPi.org](https://www.raspberrypi.org) site:
 <https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md>
 
@@ -43,4 +45,4 @@ am using
 2) Even with the tricks played above for the Flask Sever, the Flask app is still `/home/pi/projects/pi-wap/flask/flask_app/flask_app.py` as set in `pi-wap/flask/flask_server/uwsgi.ini` **so the path in `uwsgi.ini` will have to be changed if the repository location is changed on the Raspberry Pi**.  This is bad because things need to be changed in two places.  It is good because changes to flask_app.py take place right away, instead of having to always execute `get_chagned_files`.
 
 ## Flask app setup
-
+Need more content here...
