@@ -1,6 +1,7 @@
-This directory contains copies of the system files that were modified to create the wireless access point.  This was done followng the directions found here:
+This directory contains copies of the system files that were modified to create the wireless access point.  This was done followng the directions found here in the document "Setting up a Raspberry Pi as a Wireless Access Point":
 https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
-A pdf of this file is on my Google Drive
+
+A pdf of this file is on my Google Drive saved as "Setting up a Raspberry Pi as a Wireless Access Point - Raspberry Pi Documentation.pdf"
 
 The files in this directory were copied using the commands below.
 
