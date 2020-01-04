@@ -1,0 +1,1 @@
+rsync "$@" --exclude="__pycache__" --exclude="*.pyc" -rav /home/pi/projects/pi-wap/flask/ .
