@@ -1,7 +1,7 @@
 # pi-wap
 Configure a Raspberry Pi to be a wireless access point and a very simple Flask-based web page to show status.
 
-A general overview on how to use and configure the access point can be found in my Google Drive in the README file on my Google Drive in the folder `GDrive Manuals/Computers/Raspberry Pi/Wireless Access Point and Flask-Based Status Page`
+A general overview on how to use and configure the access point can be found in my Google Drive in the README file in the folder `GDrive Manuals/Computers/Raspberry Pi/Wireless Access Point and Flask-Based Status Page`
 
 ## Wireless Access Point Software and Config
 Software and configuration to create the WAP came from the article Setting up a *Raspberry Pi as a Wireless Access Point* found here on the [RaspberryPi.org](https://www.raspberrypi.org) site:
