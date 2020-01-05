@@ -22,6 +22,30 @@ def getIfconfig():
   ifconfigString = bytes.decode(ifconfigRun.stdout)
   return ifconfigString
 
+def getIwlistList():
+  # Really need to do a "sudo iwlist wlan0 scan" but that causes an error when run by Flask server
+  iwlistRun = subprocess.run(['iwlist','wlan0','scan'],check=True,stdout=subprocess.PIPE)
+  iwlistString = bytes.decode(iwlistRun.stdout)
+  iwlistList = []
+  for line in iwlistString.split('\n'):
+    if 'SSID' in line:
+      line = line.strip()
+      lineArray = line.split(':')
+      try:
+        line = lineArray[1]
+        #line = line.replace('"','')
+      except:
+        pass
+      line = line.strip()
+      if line != '""':
+        iwlistList.append(line.strip())
+  return iwlistList
+
+def getPrettyIwlist():
+  iwlistList = getIwlistList()
+  iwlistString = '\n'.join(iwlistList)
+  return iwlistString
+
 def getPrettyUptime():
   uptime = getUptime()
   uptime = uptime.split("up")
@@ -66,6 +90,7 @@ def dhpc_status():
   temp     = getCPUTemp(fahrenheit=fahrenheit)
   iwconfig = getIwconfig()
   ifconfig = getIfconfig()
+  #iwlist   = getPrettyIwlist()
 
   tempType = "C"
   maxTemp  = "82°C"
@@ -84,7 +109,8 @@ def dhpc_status():
   #dhcpLeasesString = dhcpLeasesString.replace('\n', '<br>\n')
 
   msg="""\
-<p>%s</p>
+<h3>Status</h3>
+<p>Device Time: %s</p>
 <p>%s</p>
 <p>CPU Temp: %.1f°%s (< %s is good)</p>
 <h3>Connected Devices</h3>
